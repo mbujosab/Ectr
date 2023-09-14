@@ -19,5 +19,3 @@ a clase y tener en papel lo que verá en la pantalla. En clase es más
 copiar lo que aparece en la pantalla. Por ello le proporciono la
 versión "handout" (para que tenga en papel lo que ve en pantalla y no
 tenga que copiarlo).
-
-# [[https://www.ucm.es/fundamentos-analisis-economico2/1%C2%BA-geco-matematicas-ii][Matemáticas II]] (Álgebra Lineal) del [[https://www.ucm.es/estudios/grado-economia][Grado en Economía]] de la [[https://www.ucm.es/][UCM]].
