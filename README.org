@@ -20,6 +20,5 @@ copiar lo que aparece en la pantalla. Por ello le proporciono la
 versión "handout" (para que tenga en papel lo que ve en pantalla y no
 tenga que copiarlo).
 
+Para ejecutar los notebooks de Jupiter desde su navegador pinche aquí:
 [[https://mybinder.org/v2/gh/mbujosab/Ectr/master?labpath=Practicas%2FPython%2Fnotebooks][https://mybinder.org/badge_logo.svg]]
-
-Notebooks de Jupiter [[https://mybinder.org/v2/gh/mbujosab/Ectr/master?labpath=Practicas%2FPython%2Fnotebooks][aquí]]
