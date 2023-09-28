@@ -1,0 +1,10 @@
+open data4-1
+
+Modelo1 <- ols price const sqft bedrms baths
+
+yhat1 = $coeff(const)+$coeff(sqft)*1600+$coeff(bedrms)*3+$coeff(baths)*2
+
+yhat2 = $coeff(const)+$coeff(sqft)*(1600+220)+$coeff(bedrms)*(3+1)+$coeff(baths)*2
+
+yhat1 = $coeff(const)+$coeff(sqft)*1600+$coeff(bedrms)*3+$coeff(baths)*2
+yhat2 = $coeff(const)+$coeff(sqft)*(1600+220)+$coeff(bedrms)*(3+1)+$coeff(baths)*2

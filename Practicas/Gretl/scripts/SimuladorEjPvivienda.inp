@@ -1,0 +1,56 @@
+nulldata 1500
+
+series S = randgen(U, 35, 120)
+series D = randgen(X, 5) * 3
+series U = randgen(N, 0, 40)
+
+series P = 300 + 5*S - 2*D + U
+
+summary P S D
+
+corr S D
+
+scaterPS <- gnuplot P S
+scaterPD <- gnuplot P D
+scaterDS <- gnuplot D S
+
+ModeloCompleto <- ols P 0 S D
+modeltab add
+
+## TAREA ADICIONAL ####
+AjusteMediasC = mean(P) - $coeff(S)*mean(S) - $coeff(D)*mean(D)
+beta1HatC     = $coeff(const)
+######################
+
+ModeloSinD <- ols P 0 S
+modeltab add
+
+## TAREA ADICIONAL ####
+AjusteMediasNoD = mean(P) - $coeff(S)*mean(S)
+beta1HatNoD = $coeff(const)
+######################
+
+ModeloSinS <- ols P 0 D
+modeltab add
+
+## TAREA ADICIONAL ####
+AjusteMediasNoS = mean(P) - $coeff(D)*mean(D)
+beta1HatNoD = $coeff(const)
+######################
+
+ModeloSin1 <- ols P S D
+modeltab add
+
+## TAREA ADICIONAL ####
+MediaLadoIzdo = mean(P)
+MediaLadoDcho = $coeff(S)*mean(S) + $coeff(D)*mean(D) + mean($uhat)
+######################
+
+series S0 = S - mean(S)
+series D0 = D - mean(D)
+
+ModeloCompEnDesviaciones <- ols P 0 S0 D0
+modeltab add
+ModeloEnDesviaciones <- ols P S0 D0
+modeltab add
+modeltab show
