@@ -1,0 +1,5 @@
+open andy.gdt
+
+ols sales 0 price advert
+
+Regresion  <- ols sales 0 price advert

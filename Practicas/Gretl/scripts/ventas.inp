@@ -7,3 +7,5 @@ gnuplot Ventas index --suppress-fitted --output="display"
 boxplot Ventas
 
 freq Ventas --show-plot
+
+gnuplot Ventas Exper --suppress-fitted --output="display"
