@@ -1,0 +1,21 @@
+open data3-1
+matrix X      = {const, sqft}
+matrix invXTX = invpd(X'X)
+
+ols price const sqft
+modeltab add                              # incluimos el modelo a la tabla de modelos
+
+smpl 1 13                                 # quitamos la primera observacion
+ols price const sqft
+modeltab add                              # incluimos el modelo a la tabla de modelos
+smpl full                                 # recuperamos toda la muestra
+
+smpl 2 14                                 # quitamos la ultima observacion
+ols price const sqft
+modeltab add                              # incluimos el modelo a la tabla d
+smpl full                                 # recuperamos toda la muestra
+
+smpl 2 13                                 # quitamos la primera y la ultima observaciones
+ols price const sqft
+modeltab add                              # incluimos el modelo a la tabla de modelos
+modeltab show                             # MOSTRAMOS TODOS LOS MODELOS a la vez

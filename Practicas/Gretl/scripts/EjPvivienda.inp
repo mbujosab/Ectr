@@ -1,6 +1,6 @@
-open data3-1            # LEEMOS los datos
+open data3-1
 
-print -o price sqft     # MOSTRAMOS los datos
+print -o price sqft
 
 NombreDelGrafico <- gnuplot price sqft
 
