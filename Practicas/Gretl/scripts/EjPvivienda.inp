@@ -2,7 +2,7 @@ open data3-1
 
 print -o price sqft
 
-NombreDelGrafico <- gnuplot price sqft
+RectaDeRegresion <- gnuplot price sqft
 
 ols price 0 sqft
 
