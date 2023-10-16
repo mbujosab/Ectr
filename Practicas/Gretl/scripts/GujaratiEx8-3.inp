@@ -6,7 +6,7 @@ logs GDP Employ Capital
 U <- ols l_GDP const l_Employ l_Capital
 
 restrict
-b[2]+b[3]=1
+ b[2]+b[3]=1
 end restrict
 
 series CE   = Capital/Employ

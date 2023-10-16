@@ -1,14 +1,14 @@
 open data4-1
 
-help logs                                      # mas informacion sobre el comando "logs"
+help logs                              # mas informacion sobre el comando "logs"
 logs sqft bedrms baths 
-Lin     <- ols price 0 sqft                    # "mejor" modelo lineal
-modeltab add                              # incluimos el modelo a la tabla de modelos
+Lin     <- ols price 0 sqft            # "mejor" modelo lineal
+modeltab add                           # incluimos el modelo a la tabla de modelos
 
-ols price 0 l_sqft l_bedrms l_baths # modelo lin-log 
+ols price 0 l_sqft l_bedrms l_baths    # modelo lin-log 
 LinLog2  <- omit --auto=0.05
-modeltab add                              # incluimos el modelo a la tabla de modelos
-modeltab show                             # MOSTRAMOS TODOS LOS MODELOS a la vez
+modeltab add                           # incluimos el modelo a la tabla de modelos
+modeltab show                          # MOSTRAMOS TODOS LOS MODELOS a la vez
 
 scalar yhat1500      = Lin.$coeff(const)+Lin.$coeff(sqft)*(1500)
 scalar etaLin1500    = Lin.$coeff(sqft) * 1500/yhat1500

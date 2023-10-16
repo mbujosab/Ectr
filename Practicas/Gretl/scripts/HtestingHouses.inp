@@ -1,6 +1,6 @@
 open data3-1
 
-Modelo    <- ols price const sqft
+Modelo   <- ols price const sqft
 
 # Hnula (b2=0.1)    Halt (b2>0.1)
 scalar t1 = ($coeff(sqft)-0.1)/$stderr(sqft)
@@ -16,13 +16,13 @@ scalar p2 =   pvalue(t,$df,-t2)             # Alternativa 2
 
 # Hnula (b1=0)    Halt (b1<0) 
 scalar t3 = ($coeff(const)-0)/$stderr(const)
-scalar c3 =    critical(t,$df,.95)
+scalar c3 =   critical(t,$df,.95)
 scalar p3 = 1-pvalue(t,$df,t3)
 
 # Hnula (b1=0)    Halt (b1>0) 
 scalar t3 = ($coeff(const)-0)/$stderr(const)
-scalar c3 =    critical(t,$df,.05)
-scalar p3 =   pvalue(t,$df,t3)
+scalar c3 = critical(t,$df,.05)
+scalar p3 = pvalue(t,$df,t3)
 
 # Hnula (b2=0.15)  Halt (b1~=0.15) Bilateral
 scalar t4 = ($coeff(sqft)-0.15)/$stderr(sqft)

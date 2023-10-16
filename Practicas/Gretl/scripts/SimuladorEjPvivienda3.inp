@@ -15,8 +15,8 @@ ModeloSin1 <- ols P S D
 modeltab add
 
 # calculo del coeficiente de determinacion
-R2Sin1 = 1 - $ess/(($T-1) * var(P))
-R2AjustadoSin1 = 1 - ($T-1)/($T-2)*(1 - R2Sin1)
+scalar R2Sin1 = 1 - $ess/(($T-1) * var(P))
+scalar R2AjustadoSin1 = 1 - ($T-1)/($T-2)*(1 - R2Sin1)
 
 # ortogonalizamos D respecto de las constantes
 series D0 = D - mean(D)

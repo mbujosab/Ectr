@@ -1,13 +1,13 @@
 open data3-1.gdt
 Modelo <- ols price 0 sqft
 
-x = sqft
+series x  = sqft
 series ys = 52 + 0.14*x
 
 scalar s  = 39
 
 loop 10000 --progressive --quiet
-   y = ys + randgen(N, 0, s)
+   series y = ys + randgen(N, 0, s)
    ols y const x
    scalar b1   = $coeff(const)
    scalar b2   = $coeff(x)

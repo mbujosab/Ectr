@@ -1,6 +1,6 @@
 open data3-1
-x = sqft
-y = price
+series x = sqft
+series y = price
 #set seed 3213798
 loop 100 --progressive --quiet
     series U  = randgen(n, 0, 39)

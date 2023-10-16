@@ -22,5 +22,5 @@ ols BUSTRAVL 0 FARE GASPRICE INCOME POP DENSITY LANDAREA
 ModeloFinal <- omit FARE GASPRICE LANDAREA
 modeltab add
 
-e = $uhat
+series e = $uhat
 normtest --all e

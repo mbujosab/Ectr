@@ -24,5 +24,5 @@ fcast --static predP
 print predP -o
 
 matrix P = {predP}
-d1 = P[16,1]-P[1,1]
-d2 = P[15,1]-P[14,1]
+scalar d1 = P[16,1]-P[1,1]
+scalar d2 = P[15,1]-P[14,1]

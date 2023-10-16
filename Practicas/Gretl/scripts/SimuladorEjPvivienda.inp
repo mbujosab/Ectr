@@ -18,32 +18,32 @@ ModeloCompleto <- ols P 0 S D
 modeltab add
 
 ## TAREA ADICIONAL ####
-AjusteMediasC = mean(P) - $coeff(S)*mean(S) - $coeff(D)*mean(D)
-beta1HatC     = $coeff(const)
+scalar AjusteMediasC = mean(P) - $coeff(S)*mean(S) - $coeff(D)*mean(D)
+scalar beta1HatC     = $coeff(const)
 ######################
 
 ModeloSinD <- ols P 0 S
 modeltab add
 
 ## TAREA ADICIONAL ####
-AjusteMediasNoD = mean(P) - $coeff(S)*mean(S)
-beta1HatNoD = $coeff(const)
+scalar AjusteMediasNoD = mean(P) - $coeff(S)*mean(S)
+scalar beta1HatNoD = $coeff(const)
 ######################
 
 ModeloSinS <- ols P 0 D
 modeltab add
 
 ## TAREA ADICIONAL ####
-AjusteMediasNoS = mean(P) - $coeff(D)*mean(D)
-beta1HatNoD = $coeff(const)
+scalar AjusteMediasNoS = mean(P) - $coeff(D)*mean(D)
+scalar beta1HatNoD = $coeff(const)
 ######################
 
 ModeloSin1 <- ols P S D
 modeltab add
 
 ## TAREA ADICIONAL ####
-MediaLadoIzdo = mean(P)
-MediaLadoDcho = $coeff(S)*mean(S) + $coeff(D)*mean(D) + mean($uhat)
+scalar MediaLadoIzdo = mean(P)
+scalar MediaLadoDcho = $coeff(S)*mean(S) + $coeff(D)*mean(D) + mean($uhat)
 ######################
 
 series S0 = S - mean(S)

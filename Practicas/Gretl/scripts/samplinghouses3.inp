@@ -1,5 +1,5 @@
 open data3-1.gdt
-x = sqft
+series x  = sqft
 series ys = 52 + 0.14*x
 scalar s  = 39
 
@@ -25,7 +25,7 @@ open "@workdir\coef.gdt"
 summary   --simple  b1 b2 cs2
 freq b1   --normal --silent --plot="display"
 freq b2   --normal --silent --plot="display"
-freq cs2 --normal --silent --plot="display"
+freq cs2  --normal --silent --plot="display"
 
 matrix s2invXTXhat = {var(b1), cov(b1,b2); cov(b2,b1), var(b2)}
 matrix s2invXTX    = mean(cs2)*{m11[1],m21[1];m21[1],m22[1]}
