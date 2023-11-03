@@ -28,4 +28,4 @@ endloop
 open "@workdir\pvalue.gdt"
 series ns = p<0.05
 summary ns
-freq ns
+freq ns --plot="display"
