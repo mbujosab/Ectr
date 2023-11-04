@@ -1,0 +1,19 @@
+open data4-3.gdt
+
+ModeloMCol <- ols housing 0 intrate pop gnp
+modeltab add
+
+series housingPC = housing/pop
+series gnpPC     = gnp/pop
+ModeloPC <- ols housingPC 0 intrate gnpPC
+
+modeltab show
+
+corr gnp   intrate
+corr gnpPC intrate
+
+ols housingPC 0 intrate gnpPC 
+vif
+
+ols housing   0 intrate gnp   pop
+vif
