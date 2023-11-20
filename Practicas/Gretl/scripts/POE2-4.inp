@@ -11,7 +11,6 @@ NubePuntos <- gnuplot food_exp income --output="display"
 
 #Listado de datos
 print food_exp income --byobs
-print food_exp income 
 
 #Calculo de la elasticidad
 scalar elast = $coeff(income)*mean(income)/mean(food_exp)
