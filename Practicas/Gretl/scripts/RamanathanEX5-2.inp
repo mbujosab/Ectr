@@ -14,6 +14,8 @@ modeltab add
 modeltab show
 
 vif
+scatters miles; age --output="display"
+rho = corr(miles, age)
 
 scalar estadF  = $Fstat
 scalar pvalorF = pvalue(F, 2, ModeloC.$df, estadF)

@@ -14,7 +14,9 @@ modeltab show
 vif
 
 omit pop gnp
+modeltab add
 scalar estadF  = $test
 scalar pvalorF = pvalue(F, 2, ModeloC.$df, estadF)
 
+modeltab show
 corr intrate pop gnp

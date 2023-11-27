@@ -2,7 +2,7 @@ open hprice1
 
 Modelo1     <- ols price 0 assess bdrms lotsize sqrft colonial
 
-Diagramas   <- scatters bdrms lotsize sqrft colonial ; assess
+Diagramas   <- scatters bdrms lotsize sqrft colonial ; assess --output="display"
 
 corr assess bdrms lotsize sqrft colonial
 
@@ -12,4 +12,4 @@ OtrosFactTasac = $uhat
 
 Modelo2     <- ols price 0 bdrms lotsize sqrft colonial OtrosFactTasac
 
-ModeloFinal <- omit --auto
+ModeloFinal <- omit --auto=0.01
