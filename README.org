@@ -37,6 +37,8 @@ preguntas que copiar lo que aparece en la pantalla. Por ello le
 proporciono la versión "handout" (para que tenga en papel lo que ve en
 pantalla y no tenga que copiarlo).
 
+[[file:./Aclaraciones/SobreLaSolucionDeAlgunasPreguntas.pdf][Aclaración sobre la solución de algunas preguntas tipo test]]
+
 * Ficheros de prácticas
 
 - Ficheros con prácticas de [[file:./Practicas/Gretl][Gretl]] para cada lección.
