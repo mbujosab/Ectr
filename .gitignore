@@ -1,0 +1,17 @@
+
+*~
+
+## Core latex files and latex auxiliary files:
+*.tex
+*.aux
+*.glo
+*.gls
+*.idx
+*.ilg
+*.ind
+*.log
+*.out
+*.toc
+
+Aclaraciones/SobreLaSolucionDeAlgunasPreguntas.org
+

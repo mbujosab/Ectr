@@ -1,24 +1,101 @@
-#+title: Material para un curso de Econometría 
+#+title: Material para un curso de Introducción a la Econometría 
 #+author: Marcos Bujosa
 #+LANGUAGE: es-es
 #+OPTIONS: toc:nil
+
+#+MACRO: imglnk @@html:<a href="$1"><img src="$2"></a>@@
+
 
 Transparencias y apuntes para impartir un curso introductorio de
 econometría haciendo incapié en la interpretación geométrica de muchos
 de los conceptos habituales de la probabilidad y la estadística.
 
 - El material de clase está ordenado por lecciones:
-  - La versión [[https://github.com/mbujosab/Ectr/blob/master/apuntes-Ectr-print.pdf][print]] contiene las transparencias junto con
+  - La versión [[file:./apuntes-Ectr-print.pdf][print]] contiene las transparencias junto con
     explicaciones y mucho más.
-  - La versión [[https://github.com/mbujosab/Ectr/blob/master/apuntes-Ectr-handout.pdf][handout]] contiene una réplica de las transparencias que
+  - La versión [[file:./apuntes-Ectr-handout.pdf][handout]] contiene una réplica de las transparencias que
     usaré con el proyector del aula.
 
 La versión "handout" no sirve para estudiar, pero es útil para llevar
-a clase y tener en papel lo que verá en la pantalla. En clase es más
-útil escuchar las explicaciones, pensar en ellas y hacer preguntas que
-copiar lo que aparece en la pantalla. Por ello le proporciono la
-versión "handout" (para que tenga en papel lo que ve en pantalla y no
-tenga que copiarlo).
+a clase y tener en papel lo que verá en la pantalla del aula. En clase
+es más útil escuchar las explicaciones, pensar en ellas y hacer
+preguntas que copiar lo que aparece en la pantalla. Por ello le
+proporciono la versión "handout" (para que tenga en papel lo que ve en
+pantalla y no tenga que copiarlo).
 
-Para ejecutar los notebooks de Jupiter desde su navegador pinche aquí:
-[[https://mybinder.org/v2/gh/mbujosab/Ectr/master?labpath=Practicas%2FPython%2Fnotebooks][https://mybinder.org/badge_logo.svg]]
+- Dispone de ficheros con prácticas con [[file:./Practicas/Gretl][Gretl]] (y unos pocos notebooks
+  de Jupyter con [[file:./Practicas/Python/notebooks/][Python]])
+
+Para ejecutar los notebooks de Jupyter desde su navegador pinche aquí:
+{{{imglnk(https://mybinder.org/v2/gh/mbujosab/Ectr/master?labpath=Practicas%2FPython%2Fnotebooks,file:./badge_logo.svg)}}}
+
+** Org-publish                                                     :noexport:
+
+We need a small elisp script to setup and publish  it.
+
+# ~/CloudStation/ReposGH/Docencia/Econometria-SRC/
+# ~/CloudStation/Nextcloud/Docencia/Ectr/
+# ~/CloudStation/Nextcloud/Docencia/Ectr/
+
+
+#+BEGIN_SRC emacs-lisp
+(require 'ox-publish)
+
+(let* ((base-directory "~/repos/Ectr/")
+       (org-export-with-broken-links t)
+       (org-publish-project-alist `(("html"
+				     :base-directory ,base-directory
+				     :base-extension "org"
+				     :publishing-directory ,(concat base-directory "docs")
+				     :exclude "docs"
+				     :recursive t
+				     :publishing-function org-html-publish-to-html
+				     :auto-preamble t
+				     :auto-sitemap t)
+				    ("pdf"
+				     :base-directory ,base-directory
+				     :base-extension "org"
+				     :publishing-directory ,(concat base-directory "docs/pdfs")
+				     :exclude "docs"
+				     :recursive t
+
+				     :publishing-function org-latex-publish-to-pdf
+				     :auto-preamble t
+				     :auto-sitemap t)
+				    
+				    ("static-html"
+				     :base-directory ,base-directory
+				     :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|dat\\|mov\\|txt\\|svg\\|aiff\\|csv\\|gdt\\|inp\\|ipynb"
+				     :publishing-directory ,(concat base-directory "docs")
+				     :exclude "docs"
+				     :recursive t
+				     :publishing-function org-publish-attachment)
+
+				    ;; ... all the components ...
+				    ("scimax-eln" :components ("html" "static-html" "pdf")))))
+
+  (org-publish "scimax-eln" t))
+#+END_SRC
+
+#+RESULTS:
+
+We can check out the local version.
+
+#+BEGIN_SRC emacs-lisp
+(browse-url "docs/index.html")
+#+END_SRC
+
+#+RESULTS:
+
+** Commit and publish the html pages                               :noexport:
+
+To publish these we go into the html directory, commit all the files and push them to GitHUB.
+
+
+#+BEGIN_SRC sh
+git add docs
+git commit docs -m "publish"
+git push
+#+END_SRC
+
+#+RESULTS:
