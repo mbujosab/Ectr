@@ -93,9 +93,8 @@ To publish these we go into the html directory, commit all the files and push th
 
 
 #+BEGIN_SRC sh
-git add docs
-git commit docs -m "publish"
+#git add docs
+git commit -m "intento de añadir página web al repositorio"
 git push
 #+END_SRC
 
-#+RESULTS:
