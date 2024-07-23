@@ -1,20 +1,34 @@
 #+title: Material para un curso de Introducción a la Econometría 
 #+author: Marcos Bujosa
 #+LANGUAGE: es-es
-#+OPTIONS: toc:nil
+# +OPTIONS: toc:nil
 
-#+MACRO: imglnk @@html:<a href="$1"><img src="$2"></a>@@
+# +MACRO: imglnk @@html:<a href="$1"><img src="$2"></a>@@
 
+# ###########
+# ESTO DA EL FORMATO FINAL DE LA PÁGINA WEB VÉASE [[https://olmon.gitlab.io/org-themes/]]
+#+SETUPFILE: simple_inlineUCM.theme  
+# ###########
+
+# +attr_html: :width 320px
+# file:./3-2016-07-21-Marca_UCM_logo_negro.png
+# https://www.ucm.es/data/cont/docs/3-2016-07-21-Marca%20UCM%20logo%20negro.png
+
+- Enlaces :: 
+  - [[https://mbujosab.github.io/Ectr/][Web]] con el material
+  - [[https://github.com/mbujosab/Ectr][Repositorio]] con el material
+
+* Apuntes y transparencias
 
 Transparencias y apuntes para impartir un curso introductorio de
 econometría haciendo incapié en la interpretación geométrica de muchos
 de los conceptos habituales de la probabilidad y la estadística.
 
-- El material de clase está ordenado por lecciones:
-  - La versión [[file:./apuntes-Ectr-print.pdf][print]] contiene las transparencias junto con
+El material de clase está ordenado por lecciones:
+  - La versión [[file:./apuntes-Ectr-print.pdf][print]] :: contiene las transparencias junto con
     explicaciones y mucho más.
-  - La versión [[file:./apuntes-Ectr-handout.pdf][handout]] contiene una réplica de las transparencias que
-    usaré con el proyector del aula.
+  - La versión [[file:./apuntes-Ectr-handout.pdf][handout]] :: contiene una réplica de las transparencias
+    que usaré con el proyector del aula.
 
 La versión "handout" no sirve para estudiar, pero es útil para llevar
 a clase y tener en papel lo que verá en la pantalla del aula. En clase
@@ -23,78 +37,12 @@ preguntas que copiar lo que aparece en la pantalla. Por ello le
 proporciono la versión "handout" (para que tenga en papel lo que ve en
 pantalla y no tenga que copiarlo).
 
-- Dispone de ficheros con prácticas con [[file:./Practicas/Gretl][Gretl]] (y unos pocos notebooks
-  de Jupyter con [[file:./Practicas/Python/notebooks/][Python]])
+* Ficheros de prácticas
 
-Para ejecutar los notebooks de Jupyter desde su navegador pinche aquí:
-{{{imglnk(https://mybinder.org/v2/gh/mbujosab/Ectr/master?labpath=Practicas%2FPython%2Fnotebooks,file:./badge_logo.svg)}}}
+- Ficheros con prácticas de [[file:./Practicas/Gretl][Gretl]] para cada lección.
 
-** Org-publish                                                     :noexport:
+(También dispone de unos pocos notebooks de Jupyter con [[file:./Practicas/Python/notebooks/][Python]]. Pinche
+[[https://mybinder.org/v2/gh/mbujosab/Ectr/master?labpath=Practicas%2FPython%2Fnotebooks][*aquí*]] para ejecutarlos en su navegador con el servidor [[https://mybinder.org/][mybinder]]).
+# {{{imglnk(https://mybinder.org/v2/gh/mbujosab/Ectr/master?labpath=Practicas%2FPython%2Fnotebooks,file:./badge_logo.svg)}}}
 
-We need a small elisp script to setup and publish  it.
-
-# ~/CloudStation/ReposGH/Docencia/Econometria-SRC/
-# ~/CloudStation/Nextcloud/Docencia/Ectr/
-# ~/CloudStation/Nextcloud/Docencia/Ectr/
-
-
-#+BEGIN_SRC emacs-lisp
-(require 'ox-publish)
-
-(let* ((base-directory "~/repos/Ectr/")
-       (org-export-with-broken-links t)
-       (org-publish-project-alist `(("html"
-				     :base-directory ,base-directory
-				     :base-extension "org"
-				     :publishing-directory ,(concat base-directory "docs")
-				     :exclude "docs"
-				     :recursive t
-				     :publishing-function org-html-publish-to-html
-				     :auto-preamble t
-				     :auto-sitemap t)
-				    ("pdf"
-				     :base-directory ,base-directory
-				     :base-extension "org"
-				     :publishing-directory ,(concat base-directory "docs/pdfs")
-				     :exclude "docs"
-				     :recursive t
-
-				     :publishing-function org-latex-publish-to-pdf
-				     :auto-preamble t
-				     :auto-sitemap t)
-				    
-				    ("static-html"
-				     :base-directory ,base-directory
-				     :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|dat\\|mov\\|txt\\|svg\\|aiff\\|csv\\|gdt\\|inp\\|ipynb"
-				     :publishing-directory ,(concat base-directory "docs")
-				     :exclude "docs"
-				     :recursive t
-				     :publishing-function org-publish-attachment)
-
-				    ;; ... all the components ...
-				    ("scimax-eln" :components ("html" "static-html" "pdf")))))
-
-  (org-publish "scimax-eln" t))
-#+END_SRC
-
-#+RESULTS:
-
-We can check out the local version.
-
-#+BEGIN_SRC emacs-lisp
-(browse-url "docs/index.html")
-#+END_SRC
-
-#+RESULTS:
-
-** Commit and publish the html pages                               :noexport:
-
-To publish these we go into the html directory, commit all the files and push them to GitHUB.
-
-
-#+BEGIN_SRC sh
-#git add docs
-git commit -m "intento de añadir página web al repositorio"
-git push
-#+END_SRC
 
