@@ -1,0 +1,31 @@
+#+title: Prácticas con Gretl
+#+author: Marcos Bujosa
+#+LANGUAGE: es-es
+# +OPTIONS: toc:nil
+
+# +MACRO: imglnk @@html:<a href="$1"><img src="$2"></a>@@
+
+# ###########
+# ESTO DA EL FORMATO FINAL DE LA PÁGINA WEB VÉASE [[https://olmon.gitlab.io/org-themes/]]
+#+SETUPFILE: simple_inlineUCM.theme  
+# ###########
+
+# +attr_html: :width 320px
+# file:./3-2016-07-21-Marca_UCM_logo_negro.png
+# https://www.ucm.es/data/cont/docs/3-2016-07-21-Marca%20UCM%20logo%20negro.png
+
+- Prácticas de las distintas lecciones ::
+  - [[file:Lecc01.pdf]]
+  - [[file:Lecc02.pdf]]
+  - [[file:Lecc03.pdf]]
+  - [[file:Lecc04.pdf]]
+  - [[file:Lecc05.pdf]]
+  - [[file:Lecc06.pdf]]
+  - [[file:Lecc07.pdf]]
+  - [[file:Lecc08.pdf]]
+  - [[file:Lecc09.pdf]]
+  - [[file:Lecc10.pdf]]
+  - [[file:Lecc11.pdf]]
+  - [[file:Lecc12.pdf]]
+  - [[file:Lecc13.pdf]]
+

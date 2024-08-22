@@ -41,7 +41,7 @@ pantalla y no tenga que copiarlo).
 
 * Ficheros de prácticas
 
-- Ficheros con prácticas de [[file:./Practicas/Gretl][Gretl]] para cada lección.
+- Ficheros con [[https://github.com/mbujosab/Ectr/tree/master/Practicas/Gretl][prácticas de Gretl]] para cada [[file:Practicas/Gretl/index.org][lección]].
 
 (También dispone de unos pocos notebooks de Jupyter con [[file:./Practicas/Python/notebooks/][Python]]. Pinche
 [[https://mybinder.org/v2/gh/mbujosab/Ectr/master?labpath=Practicas%2FPython%2Fnotebooks][*aquí*]] para ejecutarlos en su navegador con el servidor [[https://mybinder.org/][mybinder]]).
